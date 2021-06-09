@@ -1,0 +1,354 @@
+<html lang="en">
+
+<head>
+
+    <title>Tip Calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">-->
+    {%load static%}
+    <style>
+        #main {
+            background: url("/static/app1/black.jpg") 80% 0 no-repeat;
+            background-size: cover;
+        }
+        
+        body {
+            font: 400 18px Lato, sans-serif;
+            line-height: 1.8;
+            color: #030303;
+        }
+        
+        h2 {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            color: #303030;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+        
+        .jumbotron {
+            background-color: #000000;
+            color: #fff;
+            padding: 100px 25px;
+            font-family: Montserrat, sans-serif;
+        }
+        
+        .container-fluid {
+            padding: 60px 50px;
+        }
+        
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+        
+        .logo-small {
+            color: #000000;
+            font-size: 50px;
+        }
+        
+        .logo {
+            color: #000000;
+            font-size: 200px;
+        }
+        
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+        
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 10px;
+        }
+        
+        .item h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            font-weight: 400;
+            font-style: italic;
+            margin: 70px 0;
+        }
+        
+        .item span {
+            font-style: normal;
+        }
+        
+        .panel {
+            border: 1px solid #000000;
+            border-radius: 0 !important;
+            transition: box-shadow 0.5s;
+        }
+        
+        .panel:hover {
+            box-shadow: 5px 0px 40px rgba(0, 0, 0, .2);
+        }
+        
+        .panel-footer .btn:hover {
+            border: 1px solid #000000;
+            background-color: #fff !important;
+            color: #000000;
+        }
+        
+        .panel-heading {
+            color: #fff !important;
+            background-color: #000000 !important;
+            padding: 25px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+        
+        .panel-footer {
+            background-color: white !important;
+        }
+        
+        .panel-footer h3 {
+            font-size: 32px;
+        }
+        
+        .panel-footer h4 {
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        .panel-footer .btn {
+            margin: 15px 0;
+            background-color: #000000;
+            color: #fff;
+        }
+        
+        .navbar {
+            margin-bottom: 0;
+            background-color: #6669f0;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+            font-family: Montserrat, sans-serif;
+        }
+        
+        .navbar li a,
+        .navbar .navbar-brand {
+            color: #fff !important;
+        }
+        
+        .navbar-nav li a:hover,
+        .navbar-nav li.active a {
+            color: #000000 !important;
+        }
+        
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #fff !important
+        }
+        
+        footer .glyphicon {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+        
+        .slideanim {
+            visibility: hidden;
+        }
+        
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible;
+        }
+        
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+        
+        @-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .col-sm-4 {
+                text-align: center;
+                margin: 25px 0;
+            }
+            .btn-lg {
+                width: 100%;
+                margin-bottom: 35px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .logo {
+                font-size: 150px;
+            }
+            .carousel-inner {
+                width: 400px;
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<div>
+
+    <nav class="navbar navbar-expand-lg navbar-light navbar-default navbar-fixed-top">
+        <a class="navbar-brand" href="/">Tip Calculator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="app1">LOGIN</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id=main class="wrapper">
+        <div class="container" align="center">
+            <br>
+            <img src="{% static 'app1/tip.jpg' %}" width="70" height="80">
+        </div>
+        <br>
+        <div class="container">
+            <div>
+                <h1 align="middle" style="color: white;">WELCOME TO TIP CALCULATOR PANEL</h1>
+                <br>
+                <h2 align="middle">Hi User, you can use this panel to calculate the tip based on qualty and service
+                </h2>
+                <br>
+                <div align='middle'>
+                    <a class="btn btn-primary btn-lg" href="/app1" role="button">LOGIN TO DASHBOARD</a> </div>
+
+                <br><br>
+                <div class="container-fluid text-center">
+                    <a href="#mainsection" title="Scroll Down">
+                        <span class="glyphicon glyphicon-chevron-down" style="color: white;"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="wrapper" id="mainsection">
+    </section>
+    <br><br>
+    <div class="container">
+        <div class="card-deck">
+            <div class="card">
+                <!--    <img src="..." class="card-img-top" alt="...">-->
+                <div class="card-body">
+                    <h4 class="card-title" align="middle">Reasons for Tipping</h4>
+                    <p class="card-text">
+                        <p class="card-text">
+                            <ul>
+                                <li>Showing off</li>
+                                <li>To supplement the server's income and make them happy</li>
+                                <li>For improved future service</li>
+                                <li>To avoid disapproval from the server</li>
+                                <li>A sense of duty</li>
+                            </ul>
+
+                        </p>
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Source:Wikipedia</small>
+                </div>
+            </div>
+            <div class="card">
+                <!--    <img src="..." class="card-img-top" alt="...">-->
+                <div class="card-body">
+                    <h4 class="card-title" align="middle">Critism Faced</h4>
+                    <p class="card-text">
+                        <p class="card-text">
+                            <ul>
+                                <li> Inconsistency of percentage-based gratuities</li>
+                                <li> Travellers following home rather than local customs</li>
+                                <li> Discrimination</li>
+                                <li> Bribery and corruption</li>
+                            </ul>
+
+                        </p>
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Source:Wikipedia</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <br>
+    <p style="text-align: center;">Developed by Lavesh Mittal
+    </p>
+
+
+
+    <div class="row">
+
+
+        <footer class="container-fluid text-center">
+            <a href="/" title="To Top">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
+        </footer>
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        </body>
+
+</html>

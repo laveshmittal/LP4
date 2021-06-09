@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> {% load static %}
+    <link rel="stylesheet" href="{% static 'app1/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <br>
+    <div class="container" align="center">
+        <img src="{% static 'app1/tip.jpg' %}" width="200" height="150">
+    </div>
+    <br><br><br>
+    <h2 align="middle" style="color: #6669f0;">Login into Tip Calculator</h2>
+    <br><br>
+    <div class="container" align="center">
+        <form method="post" style="color: #6669f0; zoom: 1.5;">
+            {% csrf_token %} {{form.as_p}}
+            <input class="btn btn-primary btn-lg" type="submit" value="Log In">
+
+            <a class="btn btn-danger btn-lg" onclick="window.location='/'" role="button" style="color:white">Go Back</a>
+            <br><br><br><br>
+            <h4 align="middle" style="color: white">Username: admin Password:lavesh</h4>
+            <br><br>
+</body>
+</div>
+
+
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <title>DASHBOARD</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            background-color: white;
+        }
+        
+        .carousel-control.right,
+        .carousel-control.left {
+            background-image: none;
+            color: #000000;
+        }
+        
+        .carousel-indicators li {
+            border-color: #000000;
+        }
+        
+        .carousel {
+            width: 400px;
+            height: 500px;
+        }
+        
+        .carousel-indicators li.active {
+            background-color: #000000;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Image and text -->
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="{%static 'app1/tip.jpg'%}" width="40" height="30" class="d-inline-block align-top" alt=""> Tip Calculator
+        </a>
+
+    </nav>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">DASHBOARD</li>
+        </ol>
+    </nav>
+    <div class="container">
+
+        <div class="column" style="float: center;width: 100%;padding: 5px;">
+            <div>
+                <h1 align="middle">Tip Calculators </h1>
+            </div>
+            <div class="alert alert-primary" role="alert">
+                <a href="/app1/predictfunc" class="alert-link" style="align-content: center;">Hotel Tip Calculator based on Fuzzy Logic</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card-deck">
+            <div class="card">
+                <!--    <img src="..." class="card-img-top" alt="...">-->
+                <div class="card-body">
+                    <h4 class="card-title" align="middle">Reasons for Tipping</h4>
+                    <p class="card-text">
+                        <p class="card-text">
+                            <ul>
+                                <li>Showing off</li>
+                                <li>To supplement the server's income and make them happy</li>
+                                <li>For improved future service</li>
+                                <li>To avoid disapproval from the server</li>
+                                <li>A sense of duty</li>
+                            </ul>
+
+                        </p>
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Source:Wikipedia</small>
+                </div>
+            </div>
+            <div class="card">
+                <!--    <img src="..." class="card-img-top" alt="...">-->
+                <div class="card-body">
+                    <h4 class="card-title" align="middle">Critism Faced</h4>
+                    <p class="card-text">
+                        <p class="card-text">
+                            <ul>
+                                <li> Inconsistency of percentage-based gratuities</li>
+                                <li> Travellers following home rather than local customs</li>
+                                <li> Discrimination</li>
+                                <li> Bribery and corruption</li>
+                            </ul>
+
+                        </p>
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Source:Wikipedia</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div align="middle">
+        <button onclick="window.location.href='/'" class="btn btn-dark">Logout</button>
+
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+
+
+</body>
+
+</html>

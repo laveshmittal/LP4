@@ -1,0 +1,5 @@
+ body {
+     background: url("/static/app1/black.jpg") 100% 0 repeat;
+     max-width: 100%;
+     height: auto;
+ }
